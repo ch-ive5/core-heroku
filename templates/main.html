@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+
+<!-- Copyright 2021 Johnathan Pennington | All rights reserved. -->
+
+<head>
+    <meta charset="utf-8">
+    <title>Core | Online Game</title>
+    <meta name="description" content="Rotate the inner-core and place the falling shells around the outside. Complete layers to keep shells below the outer ring.">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='apple_touch_icon.png') }}">
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+        .position-fixed {
+            position: fixed;
+            touch-action: none;
+        }
+        .hide {
+            display: none;
+        }
+        .text-settings {
+            margin: 0;
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+        .text-style {
+            color: white;
+            font-family: Futura, "Century Gothic", sans-serif;
+            text-align: center;
+        }
+        .center {
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        #level-text {
+            width: 100%;
+            color: #b3b3b3;
+        }
+        #game-over-text {
+            width: 100%;
+        }
+        #html-console {
+            top: 2%;
+            left: 2%;
+        }
+        #top-surface {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="text-settings">
+
+    <canvas id="canvas1" class="position-fixed">
+        Your browser does not support the canvas element.
+    </canvas>
+
+    <p id='html-console' class='position-fixed hide text-style text-settings'></p>
+
+    <div id="level-text" class="position-fixed hide text-style">
+        <h1 class='text-settings'></h1>
+    </div>
+
+    <div id="game-over-text" class="position-fixed hide center text-style">
+        <h1 class='text-settings'>GAME OVER</h1>
+    </div>
+
+    <img id="img-icon-keys" class="position-fixed hide" src="{{ url_for('static', filename='icon-keys.png') }}">
+    <img id="img-icon-mouse" class="position-fixed hide" src="{{ url_for('static', filename='icon-mouse.png') }}">
+    <img id="img-icon-touch" class="position-fixed hide" src="{{ url_for('static', filename='icon-touch.png') }}">
+
+    <img id="img-icon-audio-mute" class="position-fixed hide" src="{{ url_for('static', filename='audio-mute.png') }}">
+    <img id="img-icon-audio-on" class="position-fixed hide" src="{{ url_for('static', filename='audio-on.png') }}">
+
+    <img id="img-arrow-left" class="position-fixed hide" src="{{ url_for('static', filename='clockwise-arrow.png') }}">
+    <img id="img-arrow-right" class="position-fixed hide" src="{{ url_for('static', filename='clockwise-arrow.png') }}">
+    <img id="img-fast-forward" class="position-fixed hide" src="{{ url_for('static', filename='fast-forward.png') }}">
+
+    <div id="top-surface" class="position-fixed"></div>
+
+</body>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</html>
